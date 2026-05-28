@@ -1,0 +1,68 @@
+<section id="contact" class="contact">
+  <div class="container">
+    <div class="section-header">
+      <h2>Book Your Consultation</h2>
+      <p>Fill out the form below or contact us directly at our offices.</p>
+    </div>
+    <div class="grid col-2">
+      <div class="contact-form-container">
+        <form class="appointment-form" (submit)="onSubmit($event)">
+          <div class="form-row grid col-2">
+            <input type="text" name="name" [(ngModel)]="formData.name" placeholder="Your Name" required>
+            <input type="email" name="email" [(ngModel)]="formData.email" placeholder="Your Email" required>
+          </div>
+          <div class="form-row grid col-2">
+            <input type="text" name="phone" [(ngModel)]="formData.phone" placeholder="Phone Number" required>
+            <select name="service" [(ngModel)]="formData.service" (change)="onServiceChange()" required>
+              <option value="">Select Service</option>
+              <option>Divorce</option>
+              <option>Domestic Violence</option>
+              <option>Matrimonial</option>
+              <option>Family Disputes</option>
+              <option>Bail Matters</option>
+              <option>Cheque Bounce</option>
+              <option>Civil Law</option>
+              <option>Criminal Defense</option>
+              <option>Supreme Court Matter</option>
+              <option>Corporate Law</option>
+              <option>Child Custody</option>
+              <option>Legal Documentation</option>
+              <option>Debt Recovery (DRT)</option>
+              <option>Property Law</option>
+              <option>Delhi High Court</option>
+              <option>C.A.T Services</option>
+              <option>RERA</option>
+              <option>Consumer Disputes</option>
+              <option>Cyber Law</option>
+              <option>Court Marriage</option>
+              <option value="Other">Other (Custom Option)</option>
+            </select>
+          </div>
+          <div class="form-row" *ngIf="formData.service === 'Other'">
+            <input type="text" name="customService" [(ngModel)]="formData.customService" placeholder="Please specify your service" required>
+          </div>
+          <textarea name="message" [(ngModel)]="formData.message" placeholder="Tell us about your case..." rows="6" required></textarea>
+          <button type="submit" class="btn btn-gold btn-block">Submit Request</button>
+        </form>
+      </div>
+      <div class="office-locations">
+        <div class="location-box">
+          <h3>Supreme Court Office</h3>
+          <p><i class="fas fa-map-marker-alt"></i> Chamber No. 123, M.C. Setalvad Block, Supreme Court of India, New Delhi</p>
+        </div>
+        <div class="location-box">
+          <h3>Main Chamber</h3>
+          <p><i class="fas fa-map-marker-alt"></i> 45, Legal Enclave, Tis Hazari Courts, Delhi - 110054</p>
+          <p><i class="fas fa-phone"></i> +91 99999 88888</p>
+          <p><i class="fas fa-envelope"></i> contact@adv-jagdamba.com</p>
+        </div>
+        <div class="working-hours-card">
+          <h4>Working Hours</h4>
+          <p>Mon - Fri: 10:00 AM - 07:00 PM</p>
+          <p>Sat: 10:00 AM - 03:00 PM</p>
+          <p class="status">Emergency Consultation Available 24/7</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,75 @@
+.appointment-form input, .appointment-form select, .appointment-form textarea {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  font-family: inherit;
+}
+
+.form-row.grid.col-2 {
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.btn-block {
+  width: 100%;
+}
+
+.office-locations {
+  padding-left: 50px;
+}
+
+.location-box {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.location-box h3 {
+  font-size: 1.2rem;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.location-box p {
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.working-hours-card {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.working-hours-card h4 {
+  color: var(--secondary-color);
+  margin-bottom: 15px;
+}
+
+.working-hours-card p {
+  margin-bottom: 5px;
+}
+
+.working-hours-card .status {
+  margin-top: 15px;
+  font-weight: 700;
+  color: var(--secondary-color);
+}
+
+/* Contact Responsive */
+@media (max-width: 768px) {
+  .office-locations {
+    padding-left: 0;
+    margin-top: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-row.grid.col-2 {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}

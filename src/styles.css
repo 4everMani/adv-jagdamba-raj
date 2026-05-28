@@ -1,1 +1,190 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global Styles for ADV-JAGDAMBA (Midnight Blue & Gold Theme) */
+:root {
+  --primary-color: #001f3f; /* Midnight Blue */
+  --secondary-color: #d4af37; /* Champagne Gold */
+  --accent-color: #f8f9fa; /* Off-White */
+  --text-dark: #1a1a1a;
+  --text-light: #ffffff;
+  --success-color: #2ecc71;
+  --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+* {
+  box-sizing: border-box; /* Critical for preventing width issues */
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+body {
+  font-family: 'Playfair Display', serif;
+  color: var(--text-dark);
+  background-color: #fff;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, .nav-links a {
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+}
+
+section {
+  padding: 100px 0;
+}
+
+.btn {
+  padding: 12px 30px;
+  border-radius: 50px;
+  text-transform: uppercase;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+  display: inline-block;
+  text-decoration: none;
+  border: none;
+}
+
+.btn-gold {
+  background-color: var(--secondary-color);
+  color: var(--text-light);
+}
+
+.btn-gold:hover {
+  background-color: var(--primary-color);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  position: relative;
+  display: inline-block;
+  padding-bottom: 15px;
+}
+
+.section-header h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: var(--secondary-color);
+}
+
+.grid {
+  display: grid;
+  gap: 30px;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 1024px) {
+  section {
+    padding: 60px 0;
+  }
+  
+  .section-header h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid.col-4, .grid.col-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .grid.col-2 {
+    grid-template-columns: 1fr;
+  }
+  
+  .section-header h2 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid.col-4, .grid.col-3, .grid.col-2 {
+    grid-template-columns: 1fr;
+  }
+  
+  section {
+    padding: 40px 0;
+  }
+  
+  .container {
+    padding: 0 15px;
+  }
+}
+
+/* Stats Bar Shared Section */
+.stats-bar {
+  background-color: var(--primary-color);
+  padding: 60px 0;
+  color: #fff;
+  position: relative;
+  z-index: 15;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.stat-box {
+  text-align: center;
+  border-right: 1px solid rgba(255,255,255,0.1);
+}
+
+.stat-box:last-child {
+  border-right: none;
+}
+
+.stat-number {
+  display: block;
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: var(--secondary-color);
+  margin-bottom: 5px;
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+  .stats-bar {
+    padding: 40px 0;
+  }
+  
+  .stat-box {
+    border-right: none;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .stat-box:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+}

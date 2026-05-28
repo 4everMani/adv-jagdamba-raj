@@ -1,0 +1,60 @@
+.bg-light {
+  background-color: var(--accent-color);
+}
+
+.expertise-card {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 10px;
+  text-align: center;
+  transition: var(--transition);
+  border-bottom: 4px solid transparent;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.expertise-card:hover {
+  transform: translateY(-10px);
+  border-bottom-color: var(--secondary-color);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.icon-box {
+  width: 70px;
+  height: 70px;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 25px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+}
+
+.expertise-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: var(--primary-color);
+}
+
+.expertise-card p {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+.see-more-container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.btn-outline-dark {
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  background: transparent;
+}
+
+.btn-outline-dark:hover {
+  background: var(--primary-color);
+  color: #fff;
+}

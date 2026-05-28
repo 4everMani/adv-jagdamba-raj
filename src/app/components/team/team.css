@@ -1,0 +1,125 @@
+.process .grid.col-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.process-step {
+  text-align: center;
+  position: relative;
+}
+
+.step-num {
+  font-size: 3rem;
+  font-weight: 900;
+  color: rgba(0, 31, 63, 0.1);
+  display: block;
+  margin-bottom: -20px;
+}
+
+.process-step h3 {
+  font-size: 1.2rem;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.process-step p {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.founder-card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  align-items: center;
+}
+
+.founder-img img {
+  width: 100%;
+  display: block;
+}
+
+.founder-bio {
+  padding: 50px;
+}
+
+.founder-bio h3 {
+  font-size: 2rem;
+  margin-bottom: 5px;
+}
+
+.founder-title {
+  display: block;
+  color: var(--secondary-color);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  margin-bottom: 25px;
+}
+
+.founder-bio p {
+  line-height: 1.8;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.social-links-team a {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin-right: 20px;
+}
+
+/* Team & Process Responsive */
+@media (max-width: 992px) {
+  .process .grid.col-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .founder-card {
+    display: flex;
+    flex-direction: column;
+    margin: 0 10px; /* Add slight margin on mobile */
+  }
+  
+  .founder-img {
+    height: 350px; /* Control height on mobile */
+    overflow: hidden;
+  }
+
+  .founder-img img {
+    height: 100%;
+    object-fit: cover; /* Professional cropping */
+    object-position: top;
+  }
+  
+  .founder-bio {
+    padding: 30px 20px;
+    text-align: center;
+  }
+
+  .founder-bio h3 {
+    font-size: 1.6rem;
+  }
+
+  .social-links-team {
+    justify-content: center;
+    display: flex;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .process .grid.col-4 {
+    grid-template-columns: 1fr;
+  }
+  
+  .process-step {
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  }
+}

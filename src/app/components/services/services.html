@@ -1,0 +1,41 @@
+<section id="expertise" class="expertise bg-light">
+  <div class="container">
+    <div class="section-header">
+      <h2>Our Core Expertise</h2>
+      <p>Specialized legal representation in complex litigation and dispute resolution.</p>
+    </div>
+    <div class="grid col-3">
+      <div class="expertise-card" *ngFor="let item of expertiseList | slice:0:(showAllExpertise ? expertiseList.length : 5)">
+        <div class="icon-box"><i [class]="item.icon"></i></div>
+        <h3>{{item.title}}</h3>
+        <p>{{item.desc}}</p>
+      </div>
+    </div>
+    <div class="see-more-container">
+      <button class="btn btn-outline-dark" (click)="toggleExpertise()">
+        {{ showAllExpertise ? 'See Less' : 'See More Expertise' }}
+      </button>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="services">
+  <div class="container">
+    <div class="section-header">
+      <h2>Professional Legal Services</h2>
+      <p>A wide range of legal services tailored to meet individual and business needs.</p>
+    </div>
+    <div class="grid col-3">
+      <div class="expertise-card service" *ngFor="let item of servicesList | slice:0:(showAllServices ? servicesList.length : 5)">
+        <div class="icon-box"><i [class]="item.icon"></i></div>
+        <h3>{{item.title}}</h3>
+        <p>{{item.desc}}</p>
+      </div>
+    </div>
+    <div class="see-more-container">
+      <button class="btn btn-outline-dark" (click)="toggleServices()">
+        {{ showAllServices ? 'See Less' : 'See More Services' }}
+      </button>
+    </div>
+  </div>
+</section>

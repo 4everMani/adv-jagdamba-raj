@@ -1,0 +1,52 @@
+.floating-contact {
+  position: fixed;
+  right: 20px;
+  bottom: 100px;
+  z-index: 2001;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.5rem;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  transition: var(--transition);
+}
+
+.contact-icon:hover {
+  transform: scale(1.1) translateX(-5px);
+}
+
+.whatsapp {
+  background-color: #25d366;
+}
+
+.call {
+  background-color: var(--primary-color);
+}
+
+.email {
+  background-color: var(--secondary-color);
+}
+
+@media (max-width: 768px) {
+  .floating-contact {
+    right: 15px;
+    bottom: 30px;
+  }
+  
+  .contact-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 1.2rem;
+  }
+}

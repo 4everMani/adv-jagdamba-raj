@@ -1,0 +1,35 @@
+<header class="main-header">
+  <div class="top-bar">
+    <div class="container flex-between">
+      <div class="contact-info">
+        <span><i class="icon-phone"></i> +91 9792308302</span>
+        <span><i class="icon-email"></i> advjagdamba@gmail.com</span>
+      </div>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+  </div>
+  <nav class="navbar">
+    <div class="container flex-between">
+      <div class="brand">
+        <h1 class="firm-name">JAGDAMBA</h1>
+        <p class="tagline">AND ASSOCIATES</p>
+      </div>
+      <button class="mobile-menu-toggle" (click)="toggleMenu()">
+        <i class="fas" [ngClass]="isMenuOpen ? 'fa-times' : 'fa-bars'"></i>
+      </button>
+      <ul class="nav-links" [class.active]="isMenuOpen">
+        <li><a href="#home" (click)="closeMenu()">Home</a></li>
+        <li><a href="#about" (click)="closeMenu()">About Us</a></li>
+        <li><a href="#expertise" (click)="closeMenu()">Expertise</a></li>
+        <li><a href="#services" (click)="closeMenu()">Services</a></li>
+        <li><a href="#process" (click)="closeMenu()">How We Work</a></li>
+        <li><a href="#blog" (click)="closeMenu()">Blog</a></li>
+        <li><a href="#contact" class="btn btn-gold" (click)="closeMenu()">Get Appointment</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>

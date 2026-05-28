@@ -1,0 +1,142 @@
+.main-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #fff;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.top-bar {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 8px 0;
+  font-size: 0.85rem;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contact-info span {
+  margin-right: 25px;
+}
+
+.social-links a {
+  color: #fff;
+  margin-left: 15px;
+  font-size: 1rem;
+}
+
+.navbar {
+  padding: 15px 0;
+}
+
+.brand .firm-name {
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--primary-color);
+  margin: 0;
+  line-height: 1;
+}
+
+.brand .tagline {
+  font-size: 0.75rem;
+  color: var(--secondary-color);
+  letter-spacing: 3px;
+  margin: 0;
+  font-weight: 700;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin-left: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.nav-links a:hover {
+  color: var(--secondary-color);
+}
+
+.nav-links .btn {
+  padding: 10px 20px;
+  color: #fff;
+}
+
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Header Responsive */
+@media (max-width: 992px) {
+  .nav-links li {
+    margin-left: 15px;
+  }
+  
+  .nav-links a {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .top-bar {
+    display: none;
+  }
+  
+  .mobile-menu-toggle {
+    display: block;
+  }
+  
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    flex-direction: column;
+    padding: 20px 0;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    transform: translateY(-150%);
+    transition: var(--transition);
+    z-index: -1;
+  }
+  
+  .nav-links.active {
+    transform: translateY(0);
+  }
+  
+  .nav-links li {
+    margin: 10px 0;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .nav-links li:last-child {
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+  
+  .nav-links .btn {
+    width: 100%;
+    display: block;
+  }
+}
