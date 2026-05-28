@@ -1,6 +1,6 @@
 [build]
   command = "npm run build:netlify"
-  publish = "dist/adv-jagdamba/browser/browser"
+  publish = "dist/adv-jagdamba"
 
 [context.production.environment]
 # These are placeholders. Set real values in Netlify UI or CLI.
