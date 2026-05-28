@@ -1,9 +1,0 @@
-[build]
-  command = "npm run build:netlify"
-  publish = "dist/adv-jagdamba"
-
-[context.production.environment]
-# These are placeholders. Set real values in Netlify UI or CLI.
-  EMAILJS_SERVICE_ID = "service_xxxxxx"
-  EMAILJS_TEMPLATE_ID = "template_xxxxxx"
-  EMAILJS_PUBLIC_KEY = "public_xxxxxx"
