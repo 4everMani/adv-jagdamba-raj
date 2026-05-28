@@ -43,3 +43,5 @@ __screenshots__/
 .DS_Store
 Thumbs.db
 .github/
+/.env.local
+src/environments/environment.prod.ts
