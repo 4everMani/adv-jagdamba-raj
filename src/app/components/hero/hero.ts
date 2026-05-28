@@ -18,7 +18,7 @@ export class HeroComponent implements OnInit, OnDestroy {
       welcome: 'Committed to Helping You',
       title: 'Expert Legal Advice You Can Trust',
       desc: 'Providing high-quality legal representation for over 15 years. Specializing in Family, Civil, and Criminal Law across all major Indian courts.',
-      image: 'https://images.unsplash.com/photo-1505664194779-8beaceb93744?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80'
+      image: 'https://lawtrend.in/wp-content/uploads/2023/08/allahabad-high-court-696x392.jpeg'
     },
     {
       welcome: 'Justice for All',
@@ -30,7 +30,7 @@ export class HeroComponent implements OnInit, OnDestroy {
       welcome: 'Your Legal Partner',
       title: 'Professional Integrity & Excellence',
       desc: 'Dedicated to upholding the highest standards of the legal profession while ensuring result-oriented representation for every client.',
-      image: 'https://images.unsplash.com/photo-1453945619913-79ec89a82c51?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80'
+      image: 'https://www.livelaw.in/h-upload/2020/12/29/750x450_386490-allahabad-high-court.jpg'
     }
   ];
 

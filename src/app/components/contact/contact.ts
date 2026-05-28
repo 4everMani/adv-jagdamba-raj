@@ -1,29 +1,46 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import emailjs from '@emailjs/browser';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './contact.html',
-  styleUrl: './contact.css'
+  styleUrls: ['./contact.css']
 })
-export class ContactComponent {
+export class ContactComponent implements OnInit {
   formData = {
     name: '',
-    email: '',
+    district: '',
+    city: '',
+    state: '',
     phone: '',
     service: '',
     customService: '',
     message: ''
   };
 
-  // Replace these with your actual EmailJS credentials
-  private readonly SERVICE_ID = 'YOUR_SERVICE_ID';
-  private readonly TEMPLATE_ID = 'YOUR_TEMPLATE_ID';
-  private readonly PUBLIC_KEY = 'YOUR_PUBLIC_KEY';
+  // EmailJS credentials are loaded from environment configuration
+  private SERVICE_ID = '';
+  private TEMPLATE_ID = '';
+  private PUBLIC_KEY = '';
+
+  ngOnInit(): void {
+    this.SERVICE_ID = environment.emailjs.serviceId;
+    this.TEMPLATE_ID = environment.emailjs.templateId;
+    this.PUBLIC_KEY = environment.emailjs.publicKey;
+
+    if (this.PUBLIC_KEY) {
+      try {
+        emailjs.init(this.PUBLIC_KEY);
+      } catch (e) {
+        console.warn('EmailJS initialization failed', e);
+      }
+    }
+  }
 
   onServiceChange() {
     if (this.formData.service !== 'Other') {
@@ -38,14 +55,16 @@ export class ContactComponent {
     
     const templateParams = {
       from_name: this.formData.name,
-      from_email: this.formData.email,
+      from_district: this.formData.district,
+      from_state: this.formData.state,
       phone_number: this.formData.phone,
       service_requested: selectedService,
       message: this.formData.message
     };
 
     // 1. Send Email using EmailJS
-    emailjs.send(this.SERVICE_ID, this.TEMPLATE_ID, templateParams, this.PUBLIC_KEY)
+    // EmailJS is initialized in ngOnInit; no need to pass public key to send()
+    emailjs.send(this.SERVICE_ID, this.TEMPLATE_ID, templateParams)
       .then((response) => {
         console.log('Email successfully sent!', response.status, response.text);
       }, (err) => {
@@ -53,7 +72,7 @@ export class ContactComponent {
       });
 
     // 2. Prepare WhatsApp Notification
-    const notificationText = `New Appointment Request:\nName: ${this.formData.name}\nEmail: ${this.formData.email}\nPhone: ${this.formData.phone}\nService: ${selectedService}\nMessage: ${this.formData.message}`;
+    const notificationText = `New Appointment Request:\nName: ${this.formData.name}\nDistrict: ${this.formData.district}\nState: ${this.formData.state}\nPhone: ${this.formData.phone}\nService: ${selectedService}\nMessage: ${this.formData.message}`;
     const encodedMessage = encodeURIComponent(notificationText);
     const whatsappUrl = `https://wa.me/919999988888?text=${encodedMessage}`;
     
@@ -63,7 +82,9 @@ export class ContactComponent {
     // Reset Form
     this.formData = {
       name: '',
-      email: '',
+      district: '',
+      city: '',
+      state: '',
       phone: '',
       service: '',
       customService: '',

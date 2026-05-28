@@ -9,7 +9,11 @@
         <form class="appointment-form" (submit)="onSubmit($event)">
           <div class="form-row grid col-2">
             <input type="text" name="name" [(ngModel)]="formData.name" placeholder="Your Name" required>
-            <input type="email" name="email" [(ngModel)]="formData.email" placeholder="Your Email" required>
+            <input type="text" name="city" [(ngModel)]="formData.city" placeholder="City" required>
+          </div>
+           <div class="form-row grid col-2">
+            <input type="text" name="district" [(ngModel)]="formData.district" placeholder="District" required>
+            <input type="text" name="state" [(ngModel)]="formData.state" placeholder="State" required>
           </div>
           <div class="form-row grid col-2">
             <input type="text" name="phone" [(ngModel)]="formData.phone" placeholder="Phone Number" required>
@@ -23,15 +27,12 @@
               <option>Cheque Bounce</option>
               <option>Civil Law</option>
               <option>Criminal Defense</option>
-              <option>Supreme Court Matter</option>
+              <option>High Court Matter</option>
               <option>Corporate Law</option>
               <option>Child Custody</option>
-              <option>Legal Documentation</option>
-              <option>Debt Recovery (DRT)</option>
               <option>Property Law</option>
-              <option>Delhi High Court</option>
-              <option>C.A.T Services</option>
-              <option>RERA</option>
+              <option>Allahabad High Court</option>
+              <option>NDPS</option>
               <option>Consumer Disputes</option>
               <option>Cyber Law</option>
               <option>Court Marriage</option>
@@ -47,21 +48,19 @@
       </div>
       <div class="office-locations">
         <div class="location-box">
-          <h3>Supreme Court Office</h3>
-          <p><i class="fas fa-map-marker-alt"></i> Chamber No. 123, M.C. Setalvad Block, Supreme Court of India, New Delhi</p>
+          <h3>High Court Chamber</h3>
+          <p><i class="fas fa-map-marker-alt"></i> Chamber No. 12, Old Building, Allahabad High Court</p>
         </div>
         <div class="location-box">
-          <h3>Main Chamber</h3>
-          <p><i class="fas fa-map-marker-alt"></i> 45, Legal Enclave, Tis Hazari Courts, Delhi - 110054</p>
-          <p><i class="fas fa-phone"></i> +91 99999 88888</p>
-          <p><i class="fas fa-envelope"></i> contact@adv-jagdamba.com</p>
+          <p><i class="fas fa-phone"></i> +91 9792-308-302</p>
+          <p><i class="fas fa-envelope"></i> contact: advjagdambahc@gmail.com</p>
         </div>
-        <div class="working-hours-card">
+        <!-- <div class="working-hours-card">
           <h4>Working Hours</h4>
           <p>Mon - Fri: 10:00 AM - 07:00 PM</p>
           <p>Sat: 10:00 AM - 03:00 PM</p>
           <p class="status">Emergency Consultation Available 24/7</p>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>

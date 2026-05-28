@@ -57,3 +57,24 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+## EmailJS setup (Contact form)
+
+1. Create an account at https://www.emailjs.com/ and add an email service and template.
+2. Copy your **Service ID**, **Template ID**, and **Public Key**.
+3. For local development, update `src/environments/environment.ts` with your keys (or set environment variables and inject them during your build).
+
+Example `src/environments/environment.ts` entries:
+
+```
+emailjs: {
+	serviceId: 'YOUR_SERVICE_ID',
+	templateId: 'YOUR_TEMPLATE_ID',
+	publicKey: 'YOUR_PUBLIC_KEY'
+}
+```
+
+4. Alternatively, populate the `.env` from `.env.example` and wire your build tooling to inject the values securely.
+5. Start the dev server and test the contact form; the app initializes EmailJS with the public key and sends using the configured service/template.
+
+Security: Do not commit real keys to source control. Use CI/CD secret stores or environment injection for production builds.
